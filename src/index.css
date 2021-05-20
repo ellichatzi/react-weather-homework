@@ -1,13 +1,137 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arvo, sans-serif;
+}
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(
+    circle,
+    rgba(189, 232, 202, 0.8) 21%,
+    rgba(193, 223, 212, 0.8) 67%
+  );
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 10px 10px 5px #5a6275;
+}
+.SearchCity {
+  font-family: Arvo, sans-serif;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 3px 2px 4px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.LocationButton {
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.DateTime {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+.day {
+  font-size: 20px;
+  color: #5a6275;
+  font-weight: bold;
+  color: #5a6275;
+  opacity: 0.8;
+  list-style: none;
+}
+
+.weather {
+  font-size: 20px;
+  font-weight: normal;
+}
+#description {
+  text-transform: capitalize;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 26px;
+  color: #5a6275;
+}
+.temperature {
+  font-weight: bold;
+  color: #5a6275;
+  opacity: 0.8;
+}
+.temp {
+  font-weight: bolder;
+  color: #006ec5;
+  opacity: 0.8;
+  font-size: 90px;
+}
+#enterCity {
+  background: #e3ede9;
+  border-radius: 6px;
+  padding: 2px 3px 2px 4px;
+}
+#searchButton {
+  background: #e3ede9;
+  border-radius: 6px;
+  padding: 2px 3px 2px 4px;
+}
+#getLocationButton {
+  border-radius: 12px;
+  padding: 5px 10px;
+}
+.searchCity {
+  margin: 30px 50px 20px 50px;
+  text-align: center;
+}
+.weather {
+  font-size: 20px;
+  font-weight: normal;
+}
+.date {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+.row {
+  color: #5a6275;
+  font-size: 15px;
+}
+.degrees {
+  margin-bottom: 40px;
+  color: #5a6275;
+}
+
+.precipitation,
+.wind,
+.humidity {
+  color: #006ec5;
+  font-weight: 650;
+  font-size: 17px;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  display: inline;
+}
+
+.unitlinks {
+  font-size: 20px;
+  position: relative;
+  top: -50px;
+  cursor: default;
+  text-decoration: none;
+}
+
+.locationButton {
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+#icon {
+  float: left;
+  height: 128px;
+}
+
+#description {
+  text-transform: capitalize;
 }

@@ -3,13 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import SearchCity from "./SearchCity";
 import reportWebVitals from "./reportWebVitals";
-import DateTime from "./DateTime";
 import Forecast from "./Forecast";
 
 ReactDOM.render(
   <React.StrictMode>
     <SearchCity />
-    <DateTime />
     <Forecast />
   </React.StrictMode>,
   document.getElementById("root")
