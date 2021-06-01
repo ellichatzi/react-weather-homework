@@ -7,7 +7,7 @@ import Forecast from "./Forecast";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchCity />
+    <SearchCity defaultCity="Athens" />
     <Forecast />
   </React.StrictMode>,
   document.getElementById("root")
