@@ -1,6 +1,7 @@
 import "./index.css";
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function SearchCity(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -23,11 +24,20 @@ export default function SearchCity(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      description: response.data.weather[0].description,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
     });
+  }
+  function handlePosition(position) {
+    let lon = position.coords.longitude;
+    let lat = position.coords.latitude;
+    const apiKey = "9b4ea4a09ca2cf04ce4190565f6f899b";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
   }
   function search() {
     const apiKey = "9b4ea4a09ca2cf04ce4190565f6f899b";
@@ -53,7 +63,7 @@ export default function SearchCity(props) {
         </div>
         <h1>
           <span className="weather" id="description">
-            Mostly sunny in
+            {weatherData.description} in
           </span>
           <span id="currentCity"> {city}.</span>
         </h1>
@@ -63,7 +73,9 @@ export default function SearchCity(props) {
             <div className="col-8">
               <div className="date">
                 <ul className="day">
-                  <li className="dayToday">Friday</li>
+                  <li className="dayToday">
+                    <FormattedDate date={weatherData.date}></FormattedDate>
+                  </li>
                   <li className="time">13:15</li>
                   <li className="temperature">Temperature:</li>
                 </ul>
@@ -107,13 +119,5 @@ export default function SearchCity(props) {
   } else {
     search();
     return "Loading...";
-  }
-
-  function handlePosition(position) {
-    let lon = console.log(position.coords.longitude);
-    let lat = console.log(position.coords.latitude);
-    let apiKey = "9b4ea4a09ca2cf04ce4190565f6f899b";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
   }
 }
