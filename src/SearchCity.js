@@ -2,6 +2,7 @@ import "./index.css";
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function SearchCity(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -30,6 +31,7 @@ export default function SearchCity(props) {
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
+      icon: response.data.weather[0].icon,
     });
   }
   function handlePosition(position) {
@@ -76,15 +78,12 @@ export default function SearchCity(props) {
                   <li className="dayToday">
                     <FormattedDate date={weatherData.date}></FormattedDate>
                   </li>
-                  <li className="time">13:15</li>
                   <li className="temperature">Temperature:</li>
                 </ul>
               </div>
-              <img
-                id="icon"
-                src="https://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-              />
+              <div className="float-left">
+                <WeatherIcon code={props.data.icon} />
+              </div>
               <span className="temp" id="temperature">
                 {" "}
                 {weatherData.temperature}

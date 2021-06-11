@@ -129,7 +129,8 @@ h1 {
 
 #icon {
   float: left;
-  height: 128px;
+  size: 80px;
+  margin: 10px auto;
 }
 
 #description {
