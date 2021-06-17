@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
-
+import WeatherTemperature from "./WeatherTemperature";
 export default function SearchCity(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -82,23 +82,12 @@ export default function SearchCity(props) {
                 </ul>
               </div>
               <div className="float-left">
-                <WeatherIcon code={props.data.icon} />
-              </div>
-              <span className="temp" id="temperature">
-                {" "}
-                {weatherData.temperature}
-              </span>
-              <span className="units"></span>
+                <div className="CurrentWeather">
+                  <WeatherIcon code={weatherData.icon} />
 
-              <span className="unitlinks">
-                <button id="celsius-link" className="active">
-                  °C
-                </button>{" "}
-                |
-                <button href="#" id="fahrenheit-link">
-                  °F
-                </button>
-              </span>
+                  <WeatherTemperature celsius={weatherData.temperature} />
+                </div>
+              </div>
             </div>
             <div className="col-4">
               <ul>

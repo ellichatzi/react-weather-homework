@@ -4,6 +4,7 @@ import "./index.css";
 import SearchCity from "./SearchCity";
 import reportWebVitals from "./reportWebVitals";
 import Forecast from "./Forecast";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
