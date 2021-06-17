@@ -82,7 +82,7 @@ export default function SearchCity(props) {
                 </ul>
               </div>
               <div className="float-left">
-                <div className="CurrentWeather">
+                <div className="d-flex CurrentWeather">
                   <WeatherIcon code={weatherData.icon} />
 
                   <WeatherTemperature celsius={weatherData.temperature} />
