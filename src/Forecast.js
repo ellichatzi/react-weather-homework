@@ -1,5 +1,5 @@
 import "./index.css";
-import react from "react";
+
 export default function Forecast() {
   return (
     <div className="forecast">
