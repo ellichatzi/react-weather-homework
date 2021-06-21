@@ -3,13 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import SearchCity from "./SearchCity";
 import reportWebVitals from "./reportWebVitals";
-import Forecast from "./Forecast";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <SearchCity defaultCity="Athens" />
-    <Forecast />
   </React.StrictMode>,
   document.getElementById("root")
 );

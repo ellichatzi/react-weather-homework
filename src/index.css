@@ -100,11 +100,19 @@ h1 {
   color: #5a6275;
   font-size: 15px;
 }
-.degrees {
+.degrees,
+.WeatherForecast-temperature-max,
+.WeatherForecast-temperature-min {
   margin-bottom: 40px;
   color: #5a6275;
 }
-
+.WeatherForecast-temperature-min {
+  opacity: 0.6;
+  margin-left: 5px;
+}
+.forecast {
+  text-align: center;
+}
 .precipitation,
 .wind,
 .humidity {
@@ -130,12 +138,6 @@ h1 {
 .locationButton {
   margin: 0 auto 20px;
   text-align: center;
-}
-
-#icon {
-  float: left;
-  size: 80px;
-  margin: 10px auto;
 }
 
 #description {

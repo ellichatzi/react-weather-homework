@@ -4,6 +4,7 @@ import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import Forecast from "./Forecast";
 export default function SearchCity(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -83,7 +84,7 @@ export default function SearchCity(props) {
               </div>
               <div className="float-left">
                 <div className="d-flex CurrentWeather">
-                  <WeatherIcon code={weatherData.icon} />
+                  <WeatherIcon id="#icon" code={weatherData.icon} size={52} />
 
                   <WeatherTemperature celsius={weatherData.temperature} />
                 </div>
@@ -102,6 +103,7 @@ export default function SearchCity(props) {
             </div>
           </div>
         </div>
+        <Forecast />
       </div>
     );
   } else {
