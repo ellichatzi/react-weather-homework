@@ -26,6 +26,7 @@ export default function SearchCity(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       description: response.data.weather[0].description,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
@@ -83,10 +84,13 @@ export default function SearchCity(props) {
                 </ul>
               </div>
               <div className="float-left">
-                <div className="d-flex CurrentWeather">
-                  <WeatherIcon id="#icon" code={weatherData.icon} size={52} />
+                <div className="d-flex align-items-center CurrentWeather">
+                  <WeatherIcon id="#icon" code={weatherData.icon} size={80} />
 
-                  <WeatherTemperature celsius={weatherData.temperature} />
+                  <WeatherTemperature
+                    celsius={weatherData.temperature}
+                    coordinates={weatherData.coordinates}
+                  />
                 </div>
               </div>
             </div>
