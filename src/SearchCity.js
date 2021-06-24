@@ -107,7 +107,7 @@ export default function SearchCity(props) {
             </div>
           </div>
         </div>
-        <Forecast />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
